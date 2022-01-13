@@ -167,7 +167,6 @@ DclFld li Type(*Object)
 li = *New ListItem() 
 (li *As ListItem).Text = 'Elvis'
 ```
-```
 
 Discuss how ViewState enhances the DropDownList
 
