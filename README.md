@@ -1,8 +1,20 @@
 # ASP.NET WebForms concepts 1 #
 
-### ASP.NET-concepts-1
+### Links
 
-### Run PoinerFocus and ZoomIt
+[.NET API browser](https://docs.microsoft.com/en-us/dotnet/api/?view=netframework-4.7.1)
+
+[Forms validation](https://docs.microsoft.com/en-us/previous-versions/aspnet/a0z2h4sw(v=vs.100))
+
+[Standard toolbox controls](https://docs.microsoft.com/en-us/previous-versions/aspnet/x8k61whf(v=vs.100))
+
+[Introduction to ASP.NET Forms (C#)-YouTube](https://www.youtube.com/watch?v=vPGrK52ccDM&list=PLtMFeKNXw-GH0wC0tTM1Tb8wgOw7NV9EJ)
+
+[Bootstrap 5 download and docs](https://getbootstrap.com/)
+
+[Bootstrap 5 Crash Course-YouTube](https://www.youtube.com/watch?v=O_9u1P5YjVc&list=PL4cUxeGkcC9joIM91nLzd_qaH_AimmdAR)
+
+[Modern JavaScript Tutorial-YouTube](https://www.youtube.com/watch?v=iWOYAxlnaww&list=PL4cUxeGkcC9haFPT7J25Q9GRB_ZkFrQAc)
 
 ### Project types
 
@@ -25,17 +37,21 @@ Open a Web site project
 
 You can add many different kinds of files to the project. (ie,WebForm,  JavaScript, CSS, image, and many others.
 
-Add a WebForm and name it "Controls.aspx."
+Right-click the project in the Solution Explorer and use its "Add" context menu to add a WebForm and name it "Controls.aspx." Note how every ASP.NET form implicitly includes a `form` tag.
 
 Run the program and show the form running
 
 ### AVR CodeBehind
 
+The .NET Framework provides a vast set of classes to help with many application development scenarios.
+
+![](https://asna.com/filebin/marketing/firefox_Lk1tSfO3h2.png)
+
 Explain .ASPX and .ASPX.VR
 
 Show how ASPX page links to its .VR with its CodeFile and AutoEventWireUp attributes.
 
-Mention its Inherits attributes.
+Briefly mention the page's `Inherits` attribute--the ASPX class derives from the ASPX.vr class.
 
 Briefly mention:
 
@@ -130,9 +146,28 @@ Show how value persists with ASP.NET control but not with the HTML input element
 
 #### DropDownList
 
+_Very_ briefly discuss objects in .NET
+
 Show 'select' tag versus ASP.NET's DropDownList
 
 Discuss creating a new instance of an object with the ListItem
+
+Discuss the AVR *As operator
+
+```
+DclFld li Type(ListItem) 
+li = *New ListItem() 
+ListItem.Text = 'Elvis'
+```
+
+versus 
+
+```
+DclFld li Type(*Object) 
+li = *New ListItem() 
+(li *As ListItem).Text = 'Elvis'
+```
+```
 
 Discuss how ViewState enhances the DropDownList
 
@@ -146,4 +181,6 @@ Common ways to navigate
 - Button/LinkButton with postback and Server.Transfer
 - Button/LinkButton with `PostBackUrl` property
 
-### Show how Session state is a way to values from one page to another
+Discuss properties versus fields
+
+- A strongly-typed `PreviousPage` doesn't read public fields but it does read public properties.

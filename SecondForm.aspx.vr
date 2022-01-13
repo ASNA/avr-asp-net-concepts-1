@@ -19,11 +19,21 @@ BegClass SecondForm Partial(*Yes) Access(*Public) Extends(System.Web.UI.Page)
 
         StateSelected = (PreviousPage.FindControl('statesDropDownList') *As DropDownList).SelectedValue 
 
-        StateSelected = 'X'
-
         StateSelected = *This.Request["statesDropDownList"].ToString()
 
+        DclFld x Type(*String) 
+
+        x = PreviousPage.GetType().ToString()
+
+        // Needs this directive on ASPX page to strongly type PreviousPage
+        // <%@ PreviousPageType VirtualPath="~/Controls.aspx" %>
         StateSelected = PreviousPage.FullName
+
+        DclFld li Type(*Object) 
+
+        li = *New ListItem() 
+
+        (li *As ListItem).Text = 'Elvis'
 
         If (NOT Page.IsPostBack)
             //

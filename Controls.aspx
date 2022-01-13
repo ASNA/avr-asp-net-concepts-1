@@ -31,6 +31,36 @@
 
             <hr />
 
+            <h2>Redirect to another page</h2>
+            
+            <div class="mt-2">
+                <asp:LinkButton ID="LinkButton1" runat="server" cssClass="link-success" PostBackUrl="~/SecondForm.aspx">Go to SecondForm</asp:LinkButton>
+            </div>
+            <p>A LinkButton styled with Bootstrap to look like a link. This causes a postback to the parent page:</p>
+
+            <div class="mt-2">
+                <asp:LinkButton ID="LinkButton2" runat="server" cssClass="btn btn-secondary" PostBackUrl="~/SecondForm.aspx">Go to SecondForm</asp:LinkButton>
+            </div>
+            <p>A LinkButton styled with Bootstrap to look like a button. This causes a postback to the parent page:</p>
+
+            <div class="mt-2">
+                <asp:Button ID="buttonGotoSecondForm" runat="server"  cssClass="btn btn-secondary" Text="Postback with Response.Redirect" />
+            </div>
+            <p>A Button styled with Bootstrap. This causes a postback to the parent page:</p>
+
+            <div class="mt-2">
+                <asp:Button ID="button2" runat="server"  cssClass="btn btn-secondary" Text="PostBackUrl property" PostBackUrl="~/SecondForm.aspx" />
+            </div>
+            <p>A Button styled with Bootstrap. This uses the Button's PostBackUrl property to immediately post to the target page (no postback with this):</p>
+
+            <div class="mt-2">
+                <asp:Button ID="button3" runat="server"  cssClass="btn btn-secondary" Text="Server.Transfer " />
+            </div>
+            <p>A Button styled with Bootstrap. This uses the Button's normal postback behavior but then uses Server.Transfer to immediately post to the target page (no postback with this). Also note the 
+               URL doesn't change with this technique (which is usually reason for me to never use this technique):</p>
+
+            <hr />
+
             <h2>Dropdown List</h2>
             <div>
                 <select>
@@ -44,23 +74,6 @@
             <div class="mt-2">
                 <asp:DropDownList ID="statesDropDownList" runat="server"></asp:DropDownList>
             </div>
-
-            <hr />
-
-            <h2>Redirect to another page</h2>
-            <div>
-                <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/SecondForm.aspx">Go to SecondForm</asp:LinkButton>
-            </div>
-            <div class="mt-2">
-                <asp:Button ID="buttonGotoSecondForm" runat="server" Text="Go to SecondForm" />
-            </div>
-            <div class="mt-2">
-                <asp:Button ID="button2" runat="server" Text="Go to SecondForm with PostBackUrl" PostBackUrl="~/SecondForm.aspx" />
-            </div>
-            <div class="mt-2">
-                <asp:Button ID="button3" runat="server" Text="Go to SecondForm with Server.Transfer" />
-            </div>
-
 
         </form>
     </div>

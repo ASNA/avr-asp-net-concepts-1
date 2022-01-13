@@ -74,4 +74,6 @@ BegClass Controls Partial(*Yes) Access(*Public) Extends(System.Web.UI.Page)
 
         Server.Transfer("SecondForm.aspx", *True) 		
 	EndSr
+
+
 EndClass
