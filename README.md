@@ -16,6 +16,12 @@
 
 [Modern JavaScript Tutorial-YouTube](https://www.youtube.com/watch?v=iWOYAxlnaww&list=PL4cUxeGkcC9haFPT7J25Q9GRB_ZkFrQAc)
 
+[System.Web.UI.page object](https://docs.microsoft.com/en-us/dotnet/api/system.web.ui.page?view=netframework-4.7.1)
+
+[ASP.NET WebForms Page object life cycle](https://docs.microsoft.com/en-us/previous-versions/aspnet/ms178472(v=vs.100))
+
+[ASP.NET WebForms state management](https://docs.microsoft.com/en-us/previous-versions/75x4ha6s(v=vs.140)?redirectedfrom=MSDN)
+
 ### Project types
 
 It's almost always best when starting a new Website to select Visual RPG>Web>Previous Versions>ASP.NET Empty Web Site.
@@ -40,6 +46,8 @@ You can add many different kinds of files to the project. (ie,WebForm,  JavaScri
 Right-click the project in the Solution Explorer and use its "Add" context menu to add a WebForm and name it "Controls.aspx." Note how every ASP.NET form implicitly includes a `form` tag.
 
 Run the program and show the form running
+
+Set page as HTML5 doc type
 
 ### AVR CodeBehind
 
@@ -114,6 +122,16 @@ Add Link and Script tags for it from BS CDN
 Show BS-specific markup (ie, div.container)
 
 Note ASP.NET's 'CSSClass' property versus HTML's 'class' attribute.
+
+### Form lifecycle
+
+An ASPX page's corresponding form object is an instance of System.Web.UI.Page. This form [raises several events](https://docs.microsoft.com/en-us/previous-versions/aspnet/ms178472(v=vs.100)) during its lifetime (from the time it is requested to the time it is rendered).
+
+Although the form has several events, the three that are most critical are:
+
+- **Load** - raised when the page is first requested.
+- **PreRender** - raised just before the page is rendered. The PreRender event is your last chance to change any output values, elements, or ViewState before the page is rendered.
+- **Unload** - raised immediately after the page has been rendered to the browser. We'll talk about it much more later, but the Unload event is your last chance to close files and disconnect the DB connection for the page.
 
 ## Add some controls
 
